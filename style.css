@@ -1,0 +1,77 @@
+body {
+    background-color: #000;
+    color: #FFF; /* White text */
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 0 0 3px #FFF, 0 0 5px #FFF; /* Subtle white glow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars from messing with layout */
+}
+
+#game-container {
+    text-align: center;
+}
+
+/* Style the grid display area */
+#grid-container {
+    line-height: 1.0;
+    font-size: 16px; /* Adjust as needed for optimal mobile viewing */
+    white-space: pre;
+    background-color: #080808; /* Very dark grey for grid background */
+    padding: 5px;
+    border: 1px solid #AAA; /* Dim white border */
+    margin-bottom: 15px;
+    /* Ensure fixed width/height based on characters */
+    /* width calculation might be needed in JS if font size varies significantly */
+}
+
+#controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap; /* Allow controls to wrap on small screens */
+}
+
+button {
+    background-color: transparent; /* Transparent background */
+    color: #FFF;
+    border: 1px solid #FFF;
+    padding: 8px 15px;
+    font-family: inherit;
+    cursor: pointer;
+    font-size: 1em;
+    text-shadow: inherit; /* Inherit body glow */
+}
+
+button:hover, button:active {
+    background-color: #FFF;
+    color: #000;
+    text-shadow: none; /* Turn off glow when button is inverted */
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Basic styling for range slider */
+input[type="range"] {
+    cursor: pointer;
+    /* Further styling can make it look more retro if desired */
+}
+
+/* Minimal mobile adjustments */
+@media (max-width: 600px) {
+    #grid-container {
+        font-size: 12px; /* Smaller font on smaller screens */
+        text-shadow: 0 0 2px #FFF, 0 0 3px #FFF; /* Adjust glow for smaller font */
+    }
+    button {
+        padding: 6px 10px;
+        font-size: 0.9em;
+    }
+} 
