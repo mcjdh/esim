@@ -8,7 +8,7 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    overflow: hidden; /* Prevent scrollbars from messing with layout */
+    /* overflow: hidden; */ /* Remove this to allow scrolling if content exceeds viewport */
 }
 
 #game-container {
@@ -58,10 +58,20 @@ button:hover, button:active {
     text-shadow: none; /* Turn off glow when button is inverted */
 }
 
+/* Styling for selected state (generic) */
+button.selected {
+    background-color: #FFF;
+    color: #000;
+    text-shadow: none;
+    border-width: 2px; /* Make selected slightly bolder */
+    box-shadow: 0 0 8px #FFF; /* Add a stronger glow */
+}
+
 .slider-container {
     display: flex;
     align-items: center;
     gap: 5px;
+    text-shadow: none;
 }
 
 /* Basic styling for range slider */
@@ -73,8 +83,9 @@ input[type="range"] {
 /* Minimal mobile adjustments */
 @media (max-width: 600px) {
     #grid-container {
-        font-size: 12px; /* Smaller font on smaller screens */
-        text-shadow: 0 0 2px #FFF, 0 0 3px #FFF; /* Adjust glow for smaller font */
+        font-size: 10px; /* Smaller font on smaller screens for larger grid */
+        line-height: 0.9; /* Adjust line height for smaller font */
+        text-shadow: 0 0 1px #FFF, 0 0 2px #FFF; /* Adjust glow for smaller font */
     }
     button {
         padding: 6px 10px;
@@ -126,6 +137,40 @@ button:disabled {
     text-shadow: none;
 }
 
+/* Stamp Section Styling */
+#stamps-section {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed #AAA; /* Separator */
+    width: 80%; /* Limit width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#stamps-section h4 {
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.stamp-cost-display { /* Added Style */
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    color: #BBB; /* Slightly dimmer than main text */
+}
+
+.stamp-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.stamp-button {
+    /* Inherits general button styles */
+    padding: 5px 10px; /* Slightly smaller padding */
+    font-size: 0.9em;
+}
+
 /* Log Section Styling */
 #run-log-section {
     margin-top: 20px;
@@ -143,7 +188,7 @@ button:disabled {
 }
 
 .log-box {
-    max-height: 100px; /* Limit height */
+    max-height: 150px; /* Increased height for better usability with larger grid */
     overflow-y: auto;  /* Add scrollbar if content overflows */
     background-color: #111;
     border: 1px solid #444;
@@ -155,5 +200,7 @@ button:disabled {
 
 .log-box p {
     margin: 0 0 3px 0; /* Spacing between log entries */
-    white-space: nowrap; /* Prevent wrapping */
+    /* white-space: nowrap; */ /* Removed to allow wrapping */
+    overflow-wrap: break-word; /* Ensure long words wrap */
+    word-break: break-all; /* Break aggressively if needed */
 } 
