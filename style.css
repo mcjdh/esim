@@ -22,8 +22,14 @@ body {
     white-space: pre;
     background-color: #080808; /* Very dark grey for grid background */
     padding: 5px;
-    border: 1px solid #AAA; /* Dim white border */
+    border: 1px solid #AAA; /* Dim white border - default state */
     margin-bottom: 15px;
+    cursor: pointer; /* Indicate interactivity */
+    user-select: none; /* Prevent text selection cursor */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE/Edge */
+    transition: border-color 0.3s ease-in-out; /* Smooth border color change */
     /* Ensure fixed width/height based on characters */
     /* width calculation might be needed in JS if font size varies significantly */
 }
@@ -74,4 +80,80 @@ input[type="range"] {
         padding: 6px 10px;
         font-size: 0.9em;
     }
+}
+
+/* Upgrade Section Styling */
+#upgrades-section {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed #AAA; /* Separator */
+    width: 80%; /* Limit width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#upgrades-section h3 {
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.upgrade-item {
+    display: flex;
+    justify-content: space-between; /* Align items horizontally */
+    align-items: center;
+    margin-bottom: 8px;
+    padding: 5px;
+    background-color: #111; /* Slightly different background */
+    border: 1px solid #444;
+}
+
+.upgrade-item span {
+    margin-right: 10px;
+}
+
+.upgrade-item button {
+    padding: 3px 8px; /* Smaller buttons for upgrades */
+    font-size: 0.9em;
+    min-width: 60px; /* Ensure buttons have some width */
+}
+
+/* Disabled button style */
+button:disabled {
+    color: #555;
+    border-color: #555;
+    cursor: not-allowed;
+    background-color: transparent;
+    text-shadow: none;
+}
+
+/* Log Section Styling */
+#run-log-section {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed #AAA; /* Separator */
+    width: 80%; /* Limit width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#run-log-section h4 {
+    margin-bottom: 5px;
+    font-weight: normal;
+    text-align: left;
+}
+
+.log-box {
+    max-height: 100px; /* Limit height */
+    overflow-y: auto;  /* Add scrollbar if content overflows */
+    background-color: #111;
+    border: 1px solid #444;
+    padding: 5px;
+    text-align: left;
+    font-size: 0.9em;
+    line-height: 1.2;
+}
+
+.log-box p {
+    margin: 0 0 3px 0; /* Spacing between log entries */
+    white-space: nowrap; /* Prevent wrapping */
 } 

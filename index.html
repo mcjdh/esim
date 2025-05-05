@@ -15,10 +15,33 @@
         </div>
         <div id="controls">
             <button id="run-instance">Start New Run</button>
+            <button id="end-run">End Run Early</button>
             <!-- Remove randomize button and speed slider -->
             <!-- Add Upgrade section placeholder -->
             <!-- <div id="upgrades-section"> ... </div> -->
         </div>
+
+        <div id="upgrades-section">
+            <h3>Upgrades</h3>
+            <div class="upgrade-item">
+                <span id="density-effect">Density: 25% (Lvl 0)</span>
+                <span id="density-cost">Cost: 10</span>
+                <button id="buy-density">Buy</button>
+            </div>
+            <div class="upgrade-item">
+                <span id="multiplier-effect">Multiplier: 1.0x (Lvl 0)</span>
+                <span id="multiplier-cost">Cost: 25</span>
+                <button id="buy-multiplier">Buy</button>
+            </div>
+        </div>
+
+        <div id="run-log-section">
+             <h4>Run Log</h4>
+             <div id="run-log" class="log-box">
+                 <!-- Log entries will be added here by JS -->
+             </div>
+         </div>
+
         <!-- Placeholder for future upgrade/info sections -->
         <!-- <div id="status-info">...</div> -->
         <!-- <div id="upgrades">...</div> -->
